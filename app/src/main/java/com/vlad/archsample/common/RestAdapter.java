@@ -1,6 +1,6 @@
-package com.vlad.archsample.data;
+package com.vlad.archsample.common;
 
-import com.vlad.archsample.model.User;
+import com.vlad.archsample.sample1_godObject.model.User;
 
 import java.util.List;
 

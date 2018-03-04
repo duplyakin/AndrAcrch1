@@ -1,4 +1,4 @@
-package com.vlad.archsample.view;
+package com.vlad.archsample.common;
 
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.vlad.archsample.R;
-import com.vlad.archsample.model.User;
+import com.vlad.archsample.sample1_godObject.model.User;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

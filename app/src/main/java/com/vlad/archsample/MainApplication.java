@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
-import com.vlad.archsample.data.RestAdapter;
+import com.vlad.archsample.common.RestAdapter;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

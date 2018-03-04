@@ -1,4 +1,4 @@
-package com.vlad.archsample.view;
+package com.vlad.archsample.sample1_godObject.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,8 +7,9 @@ import android.support.v7.widget.RecyclerView;
 
 import com.vlad.archsample.MainApplication;
 import com.vlad.archsample.R;
-import com.vlad.archsample.data.RestAdapter;
-import com.vlad.archsample.model.User;
+import com.vlad.archsample.common.UserListAdapter;
+import com.vlad.archsample.common.RestAdapter;
+import com.vlad.archsample.sample1_godObject.model.User;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity1 extends AppCompatActivity {
 
     @BindView(R.id.rv_items) RecyclerView listOfUsers;
 

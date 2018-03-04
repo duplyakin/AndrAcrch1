@@ -1,4 +1,4 @@
-package com.vlad.archsample.view;
+package com.vlad.archsample.common;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.vlad.archsample.R;
-import com.vlad.archsample.model.User;
+import com.vlad.archsample.sample1_godObject.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class UserListAdapter extends RecyclerView.Adapter<UserListViewHolder> {
 
-    List<User> items = new ArrayList<>();
+    public List<User> items = new ArrayList<>();
 
     @Override
     public UserListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
