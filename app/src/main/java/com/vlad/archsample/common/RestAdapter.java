@@ -1,7 +1,5 @@
 package com.vlad.archsample.common;
 
-import com.vlad.archsample.sample1_godObject.model.User;
-
 import java.util.List;
 
 import retrofit2.Call;

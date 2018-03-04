@@ -1,4 +1,4 @@
-package com.vlad.archsample.sample2_mvp.model;
+package com.vlad.archsample.common;
 
 /**
  * Created by Vlad on 04.02.2018.

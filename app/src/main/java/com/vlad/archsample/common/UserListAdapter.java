@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.vlad.archsample.R;
-import com.vlad.archsample.sample1_godObject.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

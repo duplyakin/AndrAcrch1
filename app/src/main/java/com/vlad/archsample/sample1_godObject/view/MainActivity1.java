@@ -4,12 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
 import com.vlad.archsample.MainApplication;
 import com.vlad.archsample.R;
 import com.vlad.archsample.common.UserListAdapter;
 import com.vlad.archsample.common.RestAdapter;
-import com.vlad.archsample.sample1_godObject.model.User;
+import com.vlad.archsample.common.User;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,6 +22,7 @@ import timber.log.Timber;
 public class MainActivity1 extends AppCompatActivity {
 
     @BindView(R.id.rv_items) RecyclerView listOfUsers;
+    @BindView(R.id.toolbar) Toolbar toolbar;
 
     UserListAdapter listAdapter;
     RestAdapter restAdapter;
@@ -32,6 +34,7 @@ public class MainActivity1 extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        toolbar.setTitle("Sample 1 - God Object");
 
         listAdapter = new UserListAdapter();
         listOfUsers.setAdapter(listAdapter);
