@@ -14,8 +14,9 @@
         android:theme="@style/AppTheme">
 
         <activity android:name="com.vlad.archsample.sample1_godObject.view.MainActivity1"/>
+        <activity android:name="com.vlad.archsample.sample2_mvp.view.MainActivity2"/>
 
-        <activity android:name="com.vlad.archsample.sample2_mvp.view.MainActivity2">
+        <activity android:name="com.vlad.archsample.sample3_mvp_nolifecycle.view.MainActivity3">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

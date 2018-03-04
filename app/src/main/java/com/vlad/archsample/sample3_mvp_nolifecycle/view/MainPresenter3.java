@@ -1,4 +1,4 @@
-package com.vlad.archsample.sample2_mvp.view;
+package com.vlad.archsample.sample3_mvp_nolifecycle.view;
 
 import com.vlad.archsample.MainApplication;
 import com.vlad.archsample.common.RestAdapter;
@@ -11,25 +11,38 @@ import java.util.List;
 
 import timber.log.Timber;
 
-class MainPresenter2 {
+class MainPresenter3 {
 
-    private WeakReference<MainActivity2> view;
+    private WeakReference<MainActivity3> view;
 
-    private UserListAdapter listAdapter;
+    private UserListAdapter listAdapter = new UserListAdapter();
     private RestAdapter restAdapter;
 
-    MainPresenter2(MainActivity2 view) {
-        this.view = new WeakReference<MainActivity2>(view);
-        listAdapter = new UserListAdapter();
+    MainPresenter3() {
+    }
+
+    void attachView(MainActivity3 view) {
+        this.view = new WeakReference<MainActivity3>(view);
         restAdapter = ((MainApplication) this.view.get().getApplication()).getRestAdapter();
     }
 
-    void onCreate() {
-        this.view.get().setAdapter(listAdapter);
+    void detachView() {
+        view.clear();
+        view = null;
     }
 
-    void onStart() {
-        loadUsers();
+    void start() {
+        this.view.get().setAdapter(listAdapter);
+
+        if (listAdapter.getItemCount() > 0) {
+            invalidateView();
+        } else {
+            loadUsers();
+        }
+    }
+
+    void onViewDestroy() {
+        detachView();
     }
 
     private void loadUsers() {

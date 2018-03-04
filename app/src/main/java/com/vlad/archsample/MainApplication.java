@@ -5,6 +5,7 @@ import android.app.Application;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 import com.vlad.archsample.common.RestAdapter;
+import com.vlad.archsample.sample3_mvp_nolifecycle.view.ServiceLocator;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -18,17 +19,23 @@ import timber.log.Timber;
 public class MainApplication extends Application {
 
     RestAdapter restAdapter;
+    ServiceLocator serviceLocator;
 
     @Override
     public void onCreate() {
         super.onCreate();
         Fresco.initialize(this);
         initRetrofit();
+        initServiceLocator();
         Timber.plant(new Timber.DebugTree());
     }
 
     public RestAdapter getRestAdapter() {
         return restAdapter;
+    }
+
+    public ServiceLocator getServiceLocator() {
+        return serviceLocator;
     }
 
     // --------------------------------------------------------------------------------------------
@@ -41,5 +48,9 @@ public class MainApplication extends Application {
                 .client(client)
                 .build()
                 .create(RestAdapter.class);
+    }
+
+    private void initServiceLocator() {
+        serviceLocator = new ServiceLocator();
     }
 }
