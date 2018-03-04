@@ -46,11 +46,20 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     List<User> users = restAdapter.users().execute().body();
                     listAdapter.items = users;
-                    listAdapter.notifyDataSetChanged();
+                    invalidateView();
                 } catch (IOException e) {
                     Timber.e(e, "Network error");
                 }
             }
         }).start();
+    }
+
+    private void invalidateView() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                listAdapter.notifyDataSetChanged();
+            }
+        });
     }
 }
